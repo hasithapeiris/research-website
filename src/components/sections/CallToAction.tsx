@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Download,
-  Globe,
-  Smartphone,
-  Star,
-  Users,
-  Award,
-} from "lucide-react";
+import { ArrowRight, Download, Globe, Smartphone } from "lucide-react";
 import { Header_3 } from "../../assets";
 
 export default function CallToAction() {
