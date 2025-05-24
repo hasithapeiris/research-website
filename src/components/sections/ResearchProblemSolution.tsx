@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Cpu, BarChart4, CloudSun, TrendingUp } from "lucide-react";
+import MainTitle from "../MainTitle";
 
 const solutions = [
   {
@@ -28,7 +29,7 @@ const ResearchProblemSolution = () => {
   return (
     <section
       id="research-problem-solution"
-      className="bg-gray-50 py-16 px-4 md:px-16 scroll-mt-16"
+      className="section-box bg-gray-50 scroll-mt-16 border-b"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -37,10 +38,7 @@ const ResearchProblemSolution = () => {
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold text-gray-800 mb-2">
-          Research Problem & Solution
-        </h2>
-        <div className="w-24 h-1 bg-green-600 mx-auto mb-6 rounded-full"></div>
+        <MainTitle name="Research Problem & Solution" />
       </motion.div>
 
       <motion.div
@@ -48,12 +46,11 @@ const ResearchProblemSolution = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto text-gray-700 text-lg mb-12"
+        className="max-w-4xl mx-auto text-gray-700 text-center mb-12"
       >
-        <h3 className="text-2xl font-semibold text-gray-800 mb-1">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-6">
           Problem Statement
         </h3>
-        <div className="w-16 h-1 bg-green-500 mb-4 rounded-full"></div>
         <p className="mb-4">
           Traditional tea plantation management systems lack intelligent
           automation and are heavily dependent on manual processes. Export
@@ -75,10 +72,9 @@ const ResearchProblemSolution = () => {
         transition={{ staggerChildren: 0.2 }}
         className="max-w-5xl mx-auto"
       >
-        <h3 className="text-2xl font-semibold text-gray-800 mb-1 text-center">
-          Innovative Solution
+        <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+          Innovative Solutions
         </h3>
-        <div className="w-20 h-1 bg-green-500 mx-auto mb-6 rounded-full"></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {solutions.map((solution, index) => (
             <motion.div

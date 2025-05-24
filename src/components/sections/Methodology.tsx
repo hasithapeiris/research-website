@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Layers, Cpu, TrendingUp, Network } from "lucide-react";
 import { Header_2 } from "../../assets";
+import MainTitle from "../MainTitle";
 
 const steps = [
   "Data Collection & Preprocessing",
@@ -36,7 +37,7 @@ const Methodology = () => {
   return (
     <section
       id="methodology"
-      className="bg-gray-50 py-20 px-6 md:px-20 scroll-mt-16"
+      className="section-box bg-gray-50 scroll-mt-16 border-b"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -45,8 +46,7 @@ const Methodology = () => {
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-bold text-gray-800 mb-2">Methodology</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mb-4 rounded-full"></div>
+        <MainTitle name="Methodology" />
         <p className="text-gray-700 max-w-2xl mx-auto">
           Our methodology follows a structured pipeline from data acquisition to
           actionable insights for export enhancement.
@@ -70,14 +70,14 @@ const Methodology = () => {
       </motion.ul>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
         {cards.map((card, index) => (
           <motion.div
             key={index}
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 40 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+            transition={{ duration: 0.3, delay: index * 0.1 }}
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-xl shadow-md p-6 border hover:shadow-lg transition-all duration-300"
           >

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MainTitle from "../MainTitle";
 
 const technologies = [
   { name: "Python", logo: "/tech/python.svg" },
@@ -20,7 +21,7 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      className="py-20 px-6 md:px-20 bg-white scroll-mt-16"
+      className="section-box bg-white scroll-mt-16 border-b"
     >
       {/* Header */}
       <motion.div
@@ -30,10 +31,7 @@ const Technologies = () => {
         transition={{ duration: 0.7 }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-bold text-gray-800 mb-2">
-          Technologies We Use
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mb-4 rounded-full"></div>
+        <MainTitle name="Technologies We Used" />
         <p className="text-gray-600 max-w-xl mx-auto">
           We leverage modern and robust technologies to build scalable,
           intelligent, and efficient solutions.
@@ -41,7 +39,7 @@ const Technologies = () => {
       </motion.div>
 
       {/* Technology Cards Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center lg:px-24">
         {technologies.map((tech, index) => (
           <motion.div
             key={tech.name}

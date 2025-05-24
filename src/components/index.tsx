@@ -5,6 +5,8 @@ import SubHeader from "./SubHeader";
 import TeaProductionSummary from "./TeaProductionSummary";
 import FEESummary from "./FEESummary";
 import RegionalSummary from "./RegionalSummary";
+import TitleBadge from "./TitleBadge";
+import MainTitle from "./MainTitle";
 
 // Sections
 import LiteratureSurvey from "./sections/LiteratureSurvey";
@@ -17,6 +19,7 @@ import ProjectTimeline from "./sections/ProjectTimeline";
 import Downloads from "./sections/Downloads";
 import MeetOurTeam from "./sections/MeetOurTeam";
 import ContactUs from "./sections/ContactUs";
+import CallToAction from "./sections/CallToAction";
 
 export {
   MainCarousel,
@@ -26,6 +29,8 @@ export {
   TeaProductionSummary,
   FEESummary,
   RegionalSummary,
+  TitleBadge,
+  MainTitle,
   LiteratureSurvey,
   ResearchGap,
   ResearchProblemSolution,
@@ -36,4 +41,5 @@ export {
   Downloads,
   MeetOurTeam,
   ContactUs,
+  CallToAction,
 };

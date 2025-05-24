@@ -22,6 +22,10 @@
     @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
   }
 
+  .section-box {
+    @apply py-20 px-4 md:px-24;
+  }
+
   .flex-center {
     @apply flex justify-center items-center;
   }

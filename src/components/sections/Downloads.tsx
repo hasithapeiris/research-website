@@ -1,207 +1,316 @@
-import { FaFilePdf, FaFilePowerpoint } from "react-icons/fa";
-import { MdDownload } from "react-icons/md";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import {
+  FileText,
+  Download,
+  Calendar,
+  ExternalLink,
+  Presentation,
+} from "lucide-react";
+import MainTitle from "../MainTitle";
+import TitleBadge from "../TitleBadge";
 
-interface Document {
-  name: string;
-  date: string | null;
-  type: string | string[];
-  link: string | { [key: string]: string } | null;
-}
-
-const documents: Document[] = [
-  {
-    name: "Topic Assessment",
-    date: "2021/02/25",
-    type: "Group",
-    link: "#",
-  },
-  {
-    name: "Project Charter",
-    date: "2021/02/25",
-    type: "Group",
-    link: "#",
-  },
+// Sample data - replace with your actual data
+const documents = [
   {
     name: "Project Proposal",
-    date: "2021/03/22",
-    type: "Individual",
+    date: "2024-01-15",
+    type: ["PDF", "DOCX"],
+    link: { PDF: "#", DOCX: "#" },
+    size: "2.4 MB",
+    description: "Initial project proposal and scope definition",
+  },
+  {
+    name: "Literature Review",
+    date: "2024-02-10",
+    type: "PDF",
     link: "#",
+    size: "5.1 MB",
+    description: "Comprehensive literature review and research analysis",
   },
   {
-    name: "Status Documents I",
-    date: "2021/07/05",
-    type: "Individual",
+    name: "System Architecture",
+    date: "2024-02-25",
+    type: "PDF",
     link: "#",
-  },
-  {
-    name: "Status Documents II",
-    date: null,
-    type: "Individual",
-    link: null,
-  },
-  {
-    name: "Research Paper",
-    date: null,
-    type: "Group",
-    link: null,
+    size: "3.2 MB",
+    description: "Detailed system design and architecture documentation",
   },
   {
     name: "Final Report",
-    date: "2021/10/13",
-    type: ["Group", "Individual"],
-    link: { Group: "#", Individual: "#" },
-  },
-  {
-    name: "Poster",
-    date: "2021/10/13",
-    type: "Group",
-    link: "#",
+    date: null,
+    type: "PDF",
+    link: null,
+    size: "TBD",
+    description: "Complete project documentation and findings",
   },
 ];
 
-const presentations: Document[] = [
+const presentations = [
   {
-    name: "Project Proposal",
-    date: "2021/03/14",
-    type: "Group",
+    name: "Project Kickoff",
+    date: "2024-01-20",
+    type: "PPTX",
     link: "#",
+    size: "8.5 MB",
+    description: "Initial project presentation and team introduction",
   },
   {
-    name: "Progress Presentation I",
-    date: "2021/07/08",
-    type: "Group",
+    name: "Mid-term Progress",
+    date: "2024-03-15",
+    type: "PPTX",
     link: "#",
-  },
-  {
-    name: "Progress Presentation II",
-    date: "2021/10/18",
-    type: "Group",
-    link: "#",
+    size: "12.3 MB",
+    description: "Progress update and milestone achievements",
   },
   {
     name: "Final Presentation",
     date: null,
-    type: "Group",
+    type: "PPTX",
     link: null,
+    size: "TBD",
+    description: "Final project presentation and results",
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 export default function Downloads() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   return (
-    <section className="px-6 py-10 bg-gray-50" ref={ref}>
-      <motion.h2
-        className="text-3xl font-bold mb-6"
-        variants={fadeInUp}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-      >
-        Downloads
-      </motion.h2>
+    <section className="section-box bg-gradient-to-br from-gray-50 to-gray-100 border-b">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <TitleBadge name="Downloads" />
+          <MainTitle name="Research Files" />
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Access all project documents, presentations, and resources in one
+            convenient location
+          </p>
+        </motion.div>
 
-      <motion.div
-        className="mb-10"
-        variants={fadeInUp}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-      >
-        <h3 className="text-2xl font-semibold mb-2">Documents</h3>
-        <p className="text-gray-600 mb-6">
-          Please find all documents related to this project below.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          {documents.map((doc, i) => (
-            <motion.div
-              key={i}
-              className="flex items-start gap-4 p-4 border rounded hover:scale-[1.02] transition-transform duration-200 bg-white"
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-            >
-              <FaFilePdf className="text-red-600 text-2xl mt-1" />
-              <div className="flex-1">
-                <h4 className="font-semibold">{doc.name}</h4>
-                <p className="text-sm text-gray-500">
-                  {doc.date
-                    ? `Submitted on ${doc.date}`
-                    : "Yet to be submitted, link will be updated soon."}
-                </p>
-                {Array.isArray(doc.type) ? (
-                  <div className="flex gap-4 mt-2">
-                    {doc.type.map((t) => (
-                      <a
-                        key={t}
-                        href={(doc.link as any)[t]}
-                        className="flex items-center text-blue-600 text-sm hover:underline"
-                      >
-                        {t} <MdDownload className="ml-1" />
-                      </a>
-                    ))}
-                  </div>
-                ) : doc.link ? (
-                  <a
-                    href={doc.link as string}
-                    className="flex items-center text-blue-600 text-sm mt-1 hover:underline"
-                  >
-                    {doc.type} <MdDownload className="ml-1" />
-                  </a>
-                ) : (
-                  <p className="text-sm text-gray-400 mt-1">{doc.type}</p>
-                )}
+        {/* Documents Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="mb-20"
+        >
+          <motion.div variants={itemVariants} className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-blue-100 rounded-lg">
+                <FileText className="w-6 h-6 text-blue-600" />
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      <motion.div
-        variants={fadeInUp}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-      >
-        <h3 className="text-2xl font-semibold mb-2">Presentations</h3>
-        <p className="text-gray-600 mb-6">
-          Please find all presentations related to this project below.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          {presentations.map((ppt, i) => (
-            <motion.div
-              key={i}
-              className="flex items-start gap-4 p-4 border rounded hover:scale-[1.02] transition-transform duration-200 bg-white"
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-            >
-              <FaFilePowerpoint className="text-orange-500 text-2xl mt-1" />
               <div>
-                <h4 className="font-semibold">{ppt.name}</h4>
-                <p className="text-sm text-gray-500">
-                  {ppt.date
-                    ? `Submitted on ${ppt.date}`
-                    : "Yet to be submitted, link will be updated soon."}
+                <h3 className="text-3xl font-bold text-gray-900">Documents</h3>
+                <p className="text-gray-600">
+                  Project documentation and reports
                 </p>
-                {/* {ppt.link ? (
-                  <a href={ppt.link} className="flex items-center text-blue-600 text-sm mt-1 hover:underline">
-                    {ppt.type} <MdDownload className="ml-1" />
-                  </a>
-                ) : (
-                  <p className="text-sm text-gray-400 mt-1">{ppt.type}</p>
-                )} */}
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+            </div>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            {documents.map((doc, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              >
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-red-100 rounded-lg">
+                        <FileText className="w-5 h-5 text-red-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {doc.name}
+                        </h4>
+                        <p className="text-sm text-gray-500">{doc.size}</p>
+                      </div>
+                    </div>
+                    {doc.date && (
+                      <div className="flex items-center gap-1 text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                        <Calendar className="w-3 h-3" />
+                        {doc.date}
+                      </div>
+                    )}
+                  </div>
+
+                  <p className="text-gray-600 text-sm mb-4">
+                    {doc.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-sm">
+                      {doc.date ? (
+                        <span className="text-green-600 bg-green-100 px-2 py-1 rounded-full text-xs font-medium">
+                          Available
+                        </span>
+                      ) : (
+                        <span className="text-orange-600 bg-orange-100 px-2 py-1 rounded-full text-xs font-medium">
+                          Pending
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex gap-2">
+                      {Array.isArray(doc.type) ? (
+                        doc.type.map((type) => (
+                          <button
+                            key={type}
+                            disabled={!doc.link}
+                            className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed text-sm font-medium"
+                          >
+                            <Download className="w-4 h-4" />
+                            {type}
+                          </button>
+                        ))
+                      ) : doc.link ? (
+                        <button className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                          <Download className="w-4 h-4" />
+                          {doc.type}
+                        </button>
+                      ) : (
+                        <button
+                          disabled
+                          className="flex items-center gap-1 px-3 py-2 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed text-sm font-medium"
+                        >
+                          <Download className="w-4 h-4" />
+                          {doc.type}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Presentations Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants} className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-orange-100 rounded-lg">
+                <Presentation className="w-6 h-6 text-orange-600" />
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900">
+                  Presentations
+                </h3>
+                <p className="text-gray-600">
+                  Project presentations and slides
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            {presentations.map((ppt, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              >
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-orange-100 rounded-lg">
+                        <Presentation className="w-5 h-5 text-orange-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
+                          {ppt.name}
+                        </h4>
+                        <p className="text-sm text-gray-500">{ppt.size}</p>
+                      </div>
+                    </div>
+                    {ppt.date && (
+                      <div className="flex items-center gap-1 text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                        <Calendar className="w-3 h-3" />
+                        {ppt.date}
+                      </div>
+                    )}
+                  </div>
+
+                  <p className="text-gray-600 text-sm mb-4">
+                    {ppt.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-sm">
+                      {ppt.date ? (
+                        <span className="text-green-600 bg-green-100 px-2 py-1 rounded-full text-xs font-medium">
+                          Available
+                        </span>
+                      ) : (
+                        <span className="text-orange-600 bg-orange-100 px-2 py-1 rounded-full text-xs font-medium">
+                          Pending
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex gap-2">
+                      {ppt.link ? (
+                        <div className="flex gap-2">
+                          <button className="flex items-center gap-1 px-3 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm font-medium">
+                            <Download className="w-4 h-4" />
+                            Download
+                          </button>
+                          <button className="flex items-center gap-1 px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium">
+                            <ExternalLink className="w-4 h-4" />
+                            View
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          disabled
+                          className="flex items-center gap-1 px-3 py-2 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed text-sm font-medium"
+                        >
+                          <Download className="w-4 h-4" />
+                          Coming Soon
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

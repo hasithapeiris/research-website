@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin, MapPin } from "lucide-react";
 import { useState } from "react";
+import MainTitle from "../MainTitle";
+import TitleBadge from "../TitleBadge";
 
 export default function ContactUs() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -18,7 +20,7 @@ export default function ContactUs() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-10 bg-white">
+    <section id="contact" className="section-box bg-white">
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,8 +28,8 @@ export default function ContactUs() {
         viewport={{ once: true }}
         className="max-w-4xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold mb-2 text-gray-800">Contact Us</h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto rounded-full mb-8"></div>
+        <TitleBadge name="Contact Us" />
+        <MainTitle name="Get in Touch" />
 
         <p className="mb-10 text-gray-600">
           Have questions or want to get in touch? Fill out the form below or
@@ -64,7 +66,7 @@ export default function ContactUs() {
           />
           <button
             type="submit"
-            className="bg-gradient-to-r from-blue-500 to-teal-400 hover:scale-105 transition-transform text-white font-semibold py-3 rounded-md shadow-md"
+            className="bg-gradient-to-r from-green-500 to-emerald-500 hover:scale-105 transition-transform text-white font-semibold py-3 rounded-md shadow-md"
           >
             Send Message
           </button>

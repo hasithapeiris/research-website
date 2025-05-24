@@ -1,31 +1,32 @@
 import { motion } from "framer-motion";
 import { Lightbulb, Search, Globe2, LineChart } from "lucide-react";
+import MainTitle from "../MainTitle";
 
 const cardData = [
   {
     number: 1,
-    icon: <Lightbulb className="w-8 h-8 text-indigo-600" />,
+    icon: <Lightbulb className="w-8 h-8 text-green-500" />,
     title: "Limited Smart Integration",
     description:
       "Current plantation systems lack seamless integration of AI with IoT for real-time monitoring and predictive analytics.",
   },
   {
     number: 2,
-    icon: <Search className="w-8 h-8 text-indigo-600" />,
+    icon: <Search className="w-8 h-8 text-green-500" />,
     title: "Insufficient Localized Models",
     description:
       "Most ML models are generalized and fail to account for regional agro-climatic conditions affecting tea plantations.",
   },
   {
     number: 3,
-    icon: <Globe2 className="w-8 h-8 text-indigo-600" />,
+    icon: <Globe2 className="w-8 h-8 text-green-500" />,
     title: "Gap in Export Strategy Insights",
     description:
       "There's a lack of data-driven tools for forecasting export strategies based on dynamic market and currency data.",
   },
   {
     number: 4,
-    icon: <LineChart className="w-8 h-8 text-indigo-600" />,
+    icon: <LineChart className="w-8 h-8 text-green-500" />,
     title: "Sustainability Optimization",
     description:
       "Few solutions address eco-friendly practices through intelligent decision-making systems for resource conservation.",
@@ -36,7 +37,7 @@ const ResearchGap = () => {
   return (
     <section
       id="research-gap"
-      className="py-16 px-4 md:px-16 bg-white scroll-mt-16"
+      className="section-box bg-white scroll-mt-16 border-b"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -45,7 +46,7 @@ const ResearchGap = () => {
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold text-gray-800 mb-6">Research Gap</h2>
+        <MainTitle name="Research Gap" />
         <p className="text-gray-600 mb-10">
           Despite advancements in agricultural AI and ML, there remains a
           significant gap in their practical, localized, and sustainable
@@ -70,13 +71,10 @@ const ResearchGap = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-xl border border-gray-200 transition-transform hover:-translate-y-1 duration-300"
+            className="bg-gray-50 p-6 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 transition-all hover:-translate-y-1 duration-300"
           >
             <div className="mb-4 flex items-center justify-start space-x-3">
               <div>{card.icon}</div>
-              <div className="text-indigo-600 font-semibold text-lg">
-                #{card.number}
-              </div>
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
               {card.title}

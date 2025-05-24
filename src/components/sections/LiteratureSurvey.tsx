@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import TitleBadge from "../TitleBadge";
+import MainTitle from "../MainTitle";
 
 const cardData = [
   {
@@ -29,7 +31,7 @@ const cardData = [
 
 const LiteratureSurvey = () => {
   return (
-    <section id="literature-survey" className="py-16 px-4 md:px-16 bg-gray-50">
+    <section id="literature-survey" className="section-box bg-gray-50 border-b">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -37,9 +39,8 @@ const LiteratureSurvey = () => {
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold text-gray-800 mb-6">
-          Literature Survey
-        </h2>
+        <TitleBadge name="Research Components" />
+        <MainTitle name="Literature Survey" />
         <p className="text-gray-600 mb-4">
           In recent years, the integration of machine learning (ML) into
           agriculture has significantly transformed how plantation management is
@@ -73,9 +74,9 @@ const LiteratureSurvey = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-200"
+            className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-200"
           >
-            <div className="text-indigo-600 text-xl font-bold mb-2">
+            <div className="text-green-500 text-2xl font-bold mb-2">
               #{card.number}
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -94,10 +95,10 @@ const LiteratureSurvey = () => {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto mt-16"
       >
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-          References
+        <h3 className="text-lg font-semibold text-gray-800 mb-4">
+          References:
         </h3>
-        <ul className="list-decimal list-inside text-gray-600 space-y-2 text-left">
+        <ul className="text-sm list-decimal list-inside text-gray-600 space-y-2 text-left">
           <li>
             [1] A. Smith, B. Kumar, and L. Zhang, “Machine Learning for Smart
             Agriculture,” *IEEE Access*, vol. 8, pp. 34512–34520, 2020.

@@ -1,8 +1,8 @@
 import React from "react";
 import {
+  CallToAction,
   ContactUs,
   Downloads,
-  Footer,
   LiteratureSurvey,
   MainCarousel,
   MeetOurTeam,
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
       <Downloads />
       <MeetOurTeam />
       <ContactUs />
-      <Footer />
+      <CallToAction />
     </div>
   );
 };

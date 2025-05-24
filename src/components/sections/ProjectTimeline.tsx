@@ -7,6 +7,8 @@ import {
 } from "react-icons/fa";
 import { BsFileEarmarkTextFill } from "react-icons/bs";
 import { MdWeb, MdBook, MdDoneAll } from "react-icons/md";
+import MainTitle from "../MainTitle";
+import TitleBadge from "../TitleBadge";
 
 const milestones = [
   {
@@ -87,7 +89,7 @@ const ProjectTimeline = () => {
   return (
     <section
       id="timeline"
-      className="bg-white py-20 px-6 md:px-20 scroll-mt-16"
+      className="py-20 px-4 bg-white scroll-mt-16 border-b"
     >
       {/* Section Title */}
       <motion.div
@@ -97,61 +99,176 @@ const ProjectTimeline = () => {
         transition={{ duration: 0.7 }}
         className="text-center mb-14"
       >
-        <h2 className="text-4xl font-bold text-gray-800">Project Timeline</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-green-600 mx-auto mt-2 rounded-full"></div>
+        <TitleBadge name="Milestones" />
+        <MainTitle name="Project Timeline" />
       </motion.div>
 
-      {/* Timeline Container */}
-      <div className="relative border-l-4 border-gradient-to-b from-emerald-400 to-green-600 pl-6 md:pl-0">
-        {milestones.map((m, i) => (
-          <motion.div
-            key={i}
-            className={`relative mb-12 md:w-1/2 ${
-              i % 2 === 0 ? "md:ml-auto md:pr-12" : "md:mr-auto md:pl-12"
-            }`}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-          >
-            {/* Dot and Number */}
-            <div className="absolute -left-[13px] top-2 w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 border-4 border-white z-10 flex items-center justify-center text-white text-xs font-bold">
-              {i + 1}
-            </div>
+      <div className="max-w-6xl mx-auto relative">
+        {/* Timeline Line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-400 to-green-600 hidden md:block"></div>
 
-            {/* Card */}
-            <div className="bg-gray-100 p-6 rounded-xl shadow-lg relative">
-              {/* Low-opacity number background */}
-              <div className="absolute right-4 top-2 text-6xl font-bold text-gray-200 opacity-10 z-0">
-                {i + 1}
-              </div>
+        <div className="space-y-8 md:space-y-6">
+          {milestones.map((milestone, index) => {
+            const isLeft = index % 2 === 0;
 
-              <div className="relative z-10">
-                <div className="flex items-center mb-2 text-sm text-gray-600 font-medium">
-                  {m.icon}
-                  <span className="ml-2">{m.date}</span>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative"
+              >
+                {/* Mobile Layout */}
+                <div className="md:hidden">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 flex flex-col items-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">
+                          {index + 1}
+                        </span>
+                      </div>
+                      {index < milestones.length - 1 && (
+                        <div className="w-0.5 h-16 bg-gradient-to-b from-emerald-400 to-green-600 mt-2"></div>
+                      )}
+                    </div>
+                    <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex-1 relative">
+                      {/* Low-opacity number background */}
+                      <div className="absolute right-4 top-2 text-6xl font-bold text-gray-200 opacity-10 z-0">
+                        {index + 1}
+                      </div>
+
+                      <div className="relative z-10">
+                        <div className="flex items-center mb-2 text-sm text-gray-600 font-medium">
+                          {milestone.icon}
+                          <span className="ml-2">{milestone.date}</span>
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                          {milestone.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm">
+                          {milestone.description}
+                        </p>
+                        <p className="text-sm font-medium text-gray-700 mt-3">
+                          Marks Allocated: {milestone.marks}
+                        </p>
+                        {/* Progress Bar */}
+                        <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                          <div
+                            className="bg-emerald-500 h-2.5 rounded-full transition-all duration-500"
+                            style={{ width: `${milestone.percent}%` }}
+                          ></div>
+                        </div>
+                        <p className="text-right text-xs text-gray-500 mt-1">
+                          {milestone.percent}% completed
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {m.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{m.description}</p>
-                <p className="text-sm font-medium text-gray-700 mt-3">
-                  Marks Allocated: {m.marks}
-                </p>
-                {/* Progress Bar */}
-                <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
-                  <div
-                    className="bg-emerald-500 h-2.5 rounded-full transition-all duration-500"
-                    style={{ width: `${m.percent}%` }}
-                  ></div>
+
+                {/* Desktop Layout */}
+                <div className="hidden md:block">
+                  <div className="flex items-center">
+                    {/* Left Side Content */}
+                    <div className="w-5/12 pr-1">
+                      {isLeft ? (
+                        <div className="bg-gray-100 p-6 rounded-xl shadow-lg relative">
+                          {/* Low-opacity number background */}
+                          <div className="absolute right-4 top-2 text-6xl font-bold text-gray-200 opacity-10 z-0">
+                            {index + 1}
+                          </div>
+
+                          <div className="relative z-10">
+                            <div className="flex items-center mb-2 text-sm text-gray-600 font-medium">
+                              {milestone.icon}
+                              <span className="ml-2">{milestone.date}</span>
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                              {milestone.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm">
+                              {milestone.description}
+                            </p>
+                            <p className="text-sm font-medium text-gray-700 mt-3">
+                              Marks Allocated: {milestone.marks}
+                            </p>
+                            {/* Progress Bar */}
+                            <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                              <div
+                                className="bg-emerald-500 h-2.5 rounded-full transition-all duration-500"
+                                style={{ width: `${milestone.percent}%` }}
+                              ></div>
+                            </div>
+                            <p className="text-right text-xs text-gray-500 mt-1">
+                              {milestone.percent}% completed
+                            </p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div></div>
+                      )}
+                    </div>
+
+                    {/* Center Timeline Node */}
+                    <div className="w-2/12 flex flex-col items-center relative">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center z-10">
+                        <span className="text-white font-bold">
+                          {index + 1}
+                        </span>
+                      </div>
+                      {/* Large background number */}
+                      <div className="absolute top-16 text-6xl font-bold text-gray-100 pointer-events-none">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+                    </div>
+
+                    {/* Right Side Content */}
+                    <div className="w-5/12 pl-1">
+                      {!isLeft ? (
+                        <div className="bg-gray-100 p-6 rounded-xl shadow-lg relative">
+                          {/* Low-opacity number background */}
+                          <div className="absolute right-4 top-2 text-6xl font-bold text-gray-200 opacity-10 z-0">
+                            {index + 1}
+                          </div>
+
+                          <div className="relative z-10">
+                            <div className="flex items-center mb-2 text-sm text-gray-600 font-medium">
+                              {milestone.icon}
+                              <span className="ml-2">{milestone.date}</span>
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                              {milestone.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm">
+                              {milestone.description}
+                            </p>
+                            <p className="text-sm font-medium text-gray-700 mt-3">
+                              Marks Allocated: {milestone.marks}
+                            </p>
+                            {/* Progress Bar */}
+                            <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                              <div
+                                className="bg-emerald-500 h-2.5 rounded-full transition-all duration-500"
+                                style={{ width: `${milestone.percent}%` }}
+                              ></div>
+                            </div>
+                            <p className="text-right text-xs text-gray-500 mt-1">
+                              {milestone.percent}% completed
+                            </p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div></div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <p className="text-right text-xs text-gray-500 mt-1">
-                  {m.percent}% completed
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
