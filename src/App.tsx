@@ -4,7 +4,6 @@ import {
   ContactUs,
   Downloads,
   LiteratureSurvey,
-  MainCarousel,
   MainHeader,
   MeetOurTeam,
   Methodology,
