@@ -5,6 +5,7 @@ import {
   Downloads,
   LiteratureSurvey,
   MainCarousel,
+  MainHeader,
   MeetOurTeam,
   Methodology,
   Navbar,
@@ -21,7 +22,7 @@ const App: React.FC = () => {
     <div>
       <ScrollToTop />
       <Navbar />
-      <MainCarousel />
+      <MainHeader />
       <LiteratureSurvey />
       <ResearchGap />
       <ResearchProblemSolution />

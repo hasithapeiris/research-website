@@ -5,6 +5,7 @@ import TitleBadge from "./TitleBadge";
 import MainTitle from "./MainTitle";
 
 // Sections
+import MainHeader from "./sections/MainHeader";
 import LiteratureSurvey from "./sections/LiteratureSurvey";
 import ResearchGap from "./sections/ResearchGap";
 import ResearchProblemSolution from "./sections/ResearchProblemSolution";
@@ -19,6 +20,7 @@ import CallToAction from "./sections/CallToAction";
 import ScrollToTop from "./ScrollToTop";
 
 export {
+  MainHeader,
   MainCarousel,
   Navbar,
   Footer,
