@@ -4,7 +4,7 @@ import { Header_3 } from "../../assets";
 
 export default function CallToAction() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative pt-20 pb-4 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -160,19 +160,8 @@ export default function CallToAction() {
             className="mt-16 pt-8 border-t border-white/20"
           >
             <p className="text-white/70 text-sm mb-4">
-              Trusted by leading agricultural organizations worldwide
+              © {new Date().getFullYear()} TheGuard - Tea Export Portal
             </p>
-            <div className="flex justify-center items-center gap-8 opacity-60">
-              <div className="w-24 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">USDA</span>
-              </div>
-              <div className="w-24 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">FAO</span>
-              </div>
-              <div className="w-24 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">NASA</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

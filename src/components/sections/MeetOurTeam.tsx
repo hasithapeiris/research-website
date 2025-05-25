@@ -110,7 +110,7 @@ export default function MeetOurTeam() {
       id="team"
       className="section-box bg-gradient-to-br from-gray-50 via-white to-gray-100 border-b"
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="wrapper">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

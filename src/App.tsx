@@ -1,14 +1,39 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import {
+  CallToAction,
+  ContactUs,
+  Downloads,
+  LiteratureSurvey,
+  MainCarousel,
+  MeetOurTeam,
+  Methodology,
+  Navbar,
+  ProjectTimeline,
+  ResearchGap,
+  ResearchObjectives,
+  ResearchProblemSolution,
+  ScrollToTop,
+  Technologies,
+} from "./components";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+    <div>
+      <ScrollToTop />
+      <Navbar />
+      <MainCarousel />
+      <LiteratureSurvey />
+      <ResearchGap />
+      <ResearchProblemSolution />
+      <ResearchObjectives />
+      <Methodology />
+      <Technologies />
+      <ProjectTimeline />
+      <Downloads />
+      <MeetOurTeam />
+      <ContactUs />
+      <CallToAction />
+    </div>
   );
 };
 

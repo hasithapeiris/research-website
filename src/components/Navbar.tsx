@@ -134,7 +134,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="wrapper">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo Section */}
           <motion.div

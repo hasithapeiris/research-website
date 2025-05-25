@@ -97,9 +97,9 @@ export default function Downloads() {
   return (
     <section
       id="downloads"
-      className="section-box bg-gradient-to-br from-gray-50 to-gray-100 border-b"
+      className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 border-b"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="wrapper">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

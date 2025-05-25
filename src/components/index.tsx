@@ -1,10 +1,6 @@
 import MainCarousel from "./MainCarousel";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import SubHeader from "./SubHeader";
-import TeaProductionSummary from "./TeaProductionSummary";
-import FEESummary from "./FEESummary";
-import RegionalSummary from "./RegionalSummary";
 import TitleBadge from "./TitleBadge";
 import MainTitle from "./MainTitle";
 
@@ -20,15 +16,12 @@ import Downloads from "./sections/Downloads";
 import MeetOurTeam from "./sections/MeetOurTeam";
 import ContactUs from "./sections/ContactUs";
 import CallToAction from "./sections/CallToAction";
+import ScrollToTop from "./ScrollToTop";
 
 export {
   MainCarousel,
   Navbar,
   Footer,
-  SubHeader,
-  TeaProductionSummary,
-  FEESummary,
-  RegionalSummary,
   TitleBadge,
   MainTitle,
   LiteratureSurvey,
@@ -42,4 +35,5 @@ export {
   MeetOurTeam,
   ContactUs,
   CallToAction,
+  ScrollToTop,
 };
