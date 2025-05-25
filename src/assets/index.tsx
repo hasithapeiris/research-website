@@ -1,3 +1,5 @@
+import WhiteLogo from "./logo.svg";
+import BlackLogo from "./black_logo.svg";
 import Header_1 from "./header_img_1.jpg";
 import Header_2 from "./header_img_2.jpg";
 import Header_3 from "./header_img_3.jpg";
@@ -18,4 +20,6 @@ export {
   Tea_Production,
   Tea_Disease,
   Tea_Price,
+  WhiteLogo,
+  BlackLogo,
 };

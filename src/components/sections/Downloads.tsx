@@ -95,7 +95,10 @@ const itemVariants = {
 
 export default function Downloads() {
   return (
-    <section className="section-box bg-gradient-to-br from-gray-50 to-gray-100 border-b">
+    <section
+      id="downloads"
+      className="section-box bg-gradient-to-br from-gray-50 to-gray-100 border-b"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
