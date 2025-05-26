@@ -4,15 +4,22 @@ import { motion } from "framer-motion";
 import { Linkedin, Mail, MapPin, GraduationCap } from "lucide-react";
 import MainTitle from "../MainTitle";
 import TitleBadge from "../TitleBadge";
-import { Member1, Member2, Member3, Member4 } from "../../assets";
+import {
+  Co_Supervisor,
+  Member1,
+  Member2,
+  Member3,
+  Member4,
+  Supervisor,
+} from "../../assets";
 
 const topMembers = [
   {
     name: "Dr. Nathali Silva",
-    position: "Project Supervisor",
+    position: "Supervisor",
     university: "SLIIT",
     department: "Information Technology",
-    image: "/placeholder.svg?height=200&width=200",
+    image: Supervisor,
     linkedin: "#",
     email: "nathali.s@sliit.lk",
   },
@@ -21,7 +28,7 @@ const topMembers = [
     position: "Co-Supervisor",
     university: "SLIIT",
     department: "Information Technology",
-    image: "/placeholder.svg?height=200&width=200",
+    image: Co_Supervisor,
     linkedin: "#",
     email: "sanji.c@sliit.lk",
   },

@@ -12,7 +12,7 @@ import TitleBadge from "../TitleBadge";
 
 const milestones = [
   {
-    date: "March 2021",
+    date: "August 2024",
     title: "Project Proposal",
     description:
       "A Project Proposal is presented to potential sponsors or clients to receive funding or get out project approved.",
@@ -21,7 +21,7 @@ const milestones = [
     icon: <FaCalendarAlt className="text-emerald-500 w-6 h-6" />,
   },
   {
-    date: "June 2021",
+    date: "December 2024",
     title: "Progress Presentation I",
     description:
       "Reviews the 50% completion status of the project. This reveals any gaps or inconsistencies in the design/requirements.",
@@ -30,7 +30,7 @@ const milestones = [
     icon: <FaChartLine className="text-blue-500 w-6 h-6" />,
   },
   {
-    date: "July 2021",
+    date: "March 2025",
     title: "Research Paper",
     description:
       "Describes our contribution to existing knowledge, with proper citation of all referenced work.",
@@ -39,7 +39,7 @@ const milestones = [
     icon: <FaFileAlt className="text-orange-500 w-6 h-6" />,
   },
   {
-    date: "September 2021",
+    date: "March 2025",
     title: "Progress Presentation II",
     description:
       "90% completion status demo with poster presentation that covers the project in full.",
@@ -48,34 +48,34 @@ const milestones = [
     icon: <FaChalkboardTeacher className="text-pink-500 w-6 h-6" />,
   },
   {
-    date: "October 2021",
-    title: "Website Assessment",
-    description:
-      "Website promotes our research and reveals all project details for assessment.",
-    marks: 2,
-    percent: 92,
-    icon: <MdWeb className="text-indigo-500 w-6 h-6" />,
-  },
-  {
-    date: "November 2021",
-    title: "Logbook",
-    description:
-      "Project status is validated through the Logbook including Status Documents 1 & 2.",
-    marks: 3,
-    percent: 95,
-    icon: <MdBook className="text-yellow-500 w-6 h-6" />,
-  },
-  {
-    date: "November 2021",
+    date: "April 2025",
     title: "Final Report",
     description:
       "Evaluation of the completed project including individual, group, and final reports.",
     marks: 19,
-    percent: 97,
+    percent: 92,
     icon: <BsFileEarmarkTextFill className="text-purple-500 w-6 h-6" />,
   },
   {
-    date: "November 2021",
+    date: "May 2025",
+    title: "Website Assessment",
+    description:
+      "Website promotes our research and reveals all project details for assessment.",
+    marks: 2,
+    percent: 94,
+    icon: <MdWeb className="text-indigo-500 w-6 h-6" />,
+  },
+  {
+    date: "May 2025",
+    title: "Logbook",
+    description:
+      "Project status is validated through the Logbook including Status Documents 1 & 2.",
+    marks: 3,
+    percent: 96,
+    icon: <MdBook className="text-yellow-500 w-6 h-6" />,
+  },
+  {
+    date: "May 2025",
     title: "Final Presentation & Viva",
     description:
       "Individual viva held to assess each member’s contribution to the project.",

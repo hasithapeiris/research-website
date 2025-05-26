@@ -24,6 +24,8 @@ import Member1 from "./members/methya.png";
 import Member2 from "./members/shashi.png";
 import Member3 from "./members/bhagya.png";
 import Member4 from "./members/hasitha.jpg";
+import Supervisor from "./members/supervisor.jpg";
+import Co_Supervisor from "./members/co_supervisor.jpg";
 
 export { Header_1, Header_2, Header_3, System_Diagram };
 
@@ -42,6 +44,8 @@ export {
   Docker,
   Colab,
   Jupyter,
+  Supervisor,
+  Co_Supervisor,
 };
 
 export { Member1, Member2, Member3, Member4 };
