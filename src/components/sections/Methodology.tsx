@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Layers, Cpu, TrendingUp, Network } from "lucide-react";
-import { Header_2 } from "../../assets";
+import { System_Diagram } from "../../assets";
 import MainTitle from "../MainTitle";
 
 const steps = [
@@ -14,12 +14,12 @@ const cards = [
   {
     icon: <Layers className="w-8 h-8 text-green-600" />,
     title: "Data Pipeline",
-    desc: "Collect structured and unstructured data from sensors, market reports, and satellite imagery.",
+    desc: "Collect structured and unstructured data from sensors, market reports, and government organizations.",
   },
   {
     icon: <Cpu className="w-8 h-8 text-green-600" />,
     title: "Machine Learning Models",
-    desc: "Train predictive models for yield, disease risk, and climate forecasting using supervised learning.",
+    desc: "Train predictive models for production, disease risk, and forex forecasting using supervised learning (ARIMA, Prophet).",
   },
   {
     icon: <Network className="w-8 h-8 text-green-600" />,
@@ -100,9 +100,9 @@ const Methodology = () => {
           className="max-w-5xl mx-auto"
         >
           <img
-            src={Header_2}
+            src={System_Diagram}
             alt="System Architecture Diagram"
-            className="w-full rounded-xl border shadow"
+            className="w-full rounded-xl border"
           />
         </motion.div>
       </div>

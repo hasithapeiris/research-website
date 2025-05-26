@@ -1,20 +1,37 @@
 import { motion } from "framer-motion";
 import MainTitle from "../MainTitle";
+import {
+  Colab,
+  Docker,
+  FastAPI,
+  Firebase,
+  Flask,
+  JavaScript,
+  Jupyter,
+  Kotlin,
+  MongoDB,
+  Python,
+  React,
+  Scikit,
+  TensorFlow,
+  TypeScript,
+} from "../../assets";
 
 const technologies = [
-  { name: "Python", logo: "/tech/python.svg" },
-  { name: "JavaScript", logo: "/tech/javascript.svg" },
-  { name: "TypeScript", logo: "/tech/typescript.svg" },
-  { name: "React", logo: "/tech/react.svg" },
-  { name: "Flask", logo: "/tech/flask.svg" },
-  { name: "FastAPI", logo: "/tech/fastapi.svg" },
-  { name: "Kotlin", logo: "/tech/kotlin.svg" },
-  { name: "TensorFlow", logo: "/tech/tensorflow.svg" },
-  { name: "MongoDB", logo: "/tech/mongodb.svg" },
-  { name: "Firebase", logo: "/tech/firebase.svg" },
-  { name: "Docker", logo: "/tech/docker.svg" },
-  { name: "Google Colab", logo: "/tech/colab.svg" },
-  { name: "Jupyter Notebook", logo: "/tech/jupyter.svg" },
+  { name: "Python", logo: Python },
+  { name: "JavaScript", logo: JavaScript },
+  { name: "TypeScript", logo: TypeScript },
+  { name: "React", logo: React },
+  { name: "Flask", logo: Flask },
+  { name: "FastAPI", logo: FastAPI },
+  { name: "Kotlin", logo: Kotlin },
+  { name: "Scikit-Learn", logo: Scikit },
+  { name: "TensorFlow", logo: TensorFlow },
+  { name: "MongoDB", logo: MongoDB },
+  { name: "Firebase", logo: Firebase },
+  { name: "Docker", logo: Docker },
+  { name: "Google Colab", logo: Colab },
+  { name: "Jupyter Notebook", logo: Jupyter },
 ];
 
 const Technologies = () => {

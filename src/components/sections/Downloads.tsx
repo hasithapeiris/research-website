@@ -9,7 +9,6 @@ import {
 import MainTitle from "../MainTitle";
 import TitleBadge from "../TitleBadge";
 
-// Sample data - replace with your actual data
 const documents = [
   {
     name: "Project Proposal",
@@ -20,20 +19,29 @@ const documents = [
     description: "Initial project proposal and scope definition",
   },
   {
-    name: "Literature Review",
+    name: "Status Document I",
     date: "2024-02-10",
     type: "PDF",
     link: "#",
     size: "5.1 MB",
-    description: "Comprehensive literature review and research analysis",
+    description: "Comprehensive status review of the project",
   },
   {
-    name: "System Architecture",
-    date: "2024-02-25",
+    name: "Status Document II",
+    date: "2025-02-10",
+    type: "PDF",
+    link: "#",
+    size: "5.1 MB",
+    description: "Comprehensive status review of the project",
+  },
+  {
+    name: "Research Paper",
+    date: "2025-03-20",
     type: "PDF",
     link: "#",
     size: "3.2 MB",
-    description: "Detailed system design and architecture documentation",
+    description:
+      "Describes our contribution to existing knowledge, with proper citation of all referenced work",
   },
   {
     name: "Final Report",
@@ -43,20 +51,36 @@ const documents = [
     size: "TBD",
     description: "Complete project documentation and findings",
   },
+  {
+    name: "Project Poster",
+    date: null,
+    type: "PNG",
+    link: null,
+    size: "TBD",
+    description: "Promotion Postar of the project",
+  },
 ];
 
 const presentations = [
   {
-    name: "Project Kickoff",
-    date: "2024-01-20",
+    name: "Project Proposal",
+    date: "2024-05-20",
     type: "PPTX",
     link: "#",
     size: "8.5 MB",
     description: "Initial project presentation and team introduction",
   },
   {
-    name: "Mid-term Progress",
-    date: "2024-03-15",
+    name: "Progress Presentation I",
+    date: "2024-11-15",
+    type: "PPTX",
+    link: "#",
+    size: "12.3 MB",
+    description: "Progress update and milestone achievements",
+  },
+  {
+    name: "Progress Presentation II",
+    date: "2024-11-15",
     type: "PPTX",
     link: "#",
     size: "12.3 MB",

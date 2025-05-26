@@ -4,81 +4,74 @@ import { motion } from "framer-motion";
 import { Linkedin, Mail, MapPin, GraduationCap } from "lucide-react";
 import MainTitle from "../MainTitle";
 import TitleBadge from "../TitleBadge";
+import { Member1, Member2, Member3, Member4 } from "../../assets";
 
-// Sample data - replace with your actual team data
 const topMembers = [
   {
-    name: "Dr. Sarah Johnson",
+    name: "Dr. Nathali Silva",
     position: "Project Supervisor",
-    university: "MIT",
-    department: "Computer Science",
+    university: "SLIIT",
+    department: "Information Technology",
     image: "/placeholder.svg?height=200&width=200",
     linkedin: "#",
-    email: "sarah.johnson@mit.edu",
-    bio: "Leading expert in AI and machine learning with 15+ years of experience.",
+    email: "nathali.s@sliit.lk",
   },
   {
-    name: "Prof. Michael Chen",
+    name: "Ms. Sanjeevi Chandrasiri",
     position: "Co-Supervisor",
-    university: "Stanford University",
-    department: "Electrical Engineering",
+    university: "SLIIT",
+    department: "Information Technology",
     image: "/placeholder.svg?height=200&width=200",
     linkedin: "#",
-    email: "michael.chen@stanford.edu",
-    bio: "Specialist in IoT systems and smart agriculture technologies.",
+    email: "sanji.c@sliit.lk",
   },
   {
-    name: "Dr. Emily Rodriguez",
-    position: "Research Advisor",
-    university: "UC Berkeley",
-    department: "Agricultural Engineering",
+    name: "Ms. Sanjeevi Chandrasiri",
+    position: "External Supervisor",
+    university: "University of Peradeniya",
+    department: "Information Technology",
     image: "/placeholder.svg?height=200&width=200",
     linkedin: "#",
-    email: "emily.rodriguez@berkeley.edu",
-    bio: "Pioneer in sustainable farming and precision agriculture.",
+    email: "sanji.c@sliit.lk",
   },
 ];
 
 const otherMembers = [
   {
-    name: "Alex Thompson",
-    position: "Lead Developer",
-    university: "MIT",
-    department: "Computer Science",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Methya Kariyapperuma",
+    position: "Group Leader",
+    university: "SLIIT",
+    department: "Computer Science & Software Engineering",
+    image: Member1,
     linkedin: "#",
-    email: "alex.thompson@student.mit.edu",
-    bio: "Full-stack developer specializing in React and Node.js.",
+    email: "methya.v@gmail.com",
   },
   {
-    name: "Maria Garcia",
-    position: "Data Scientist",
-    university: "Stanford University",
-    department: "Data Science",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Sasindu Sembakutti",
+    position: "Team Member",
+    university: "SLIIT",
+    department: "Computer Science & Software Engineering",
+    image: Member2,
     linkedin: "#",
-    email: "maria.garcia@student.stanford.edu",
-    bio: "Expert in machine learning and agricultural data analysis.",
+    email: "sasindu0205@gmail.com",
   },
   {
-    name: "James Wilson",
-    position: "Hardware Engineer",
-    university: "UC Berkeley",
-    department: "Electrical Engineering",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Bhagya",
+    position: "Team Member",
+    university: "SLIIT",
+    department: "Computer Science & Software Engineering",
+    image: Member3,
     linkedin: "#",
-    email: "james.wilson@student.berkeley.edu",
-    bio: "IoT specialist focusing on sensor networks and embedded systems.",
+    email: "poornabhagy@gmail.com",
   },
   {
-    name: "Lisa Chang",
-    position: "UI/UX Designer",
-    university: "MIT",
-    department: "Design",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Hasitha Peiris",
+    position: "Team Member",
+    university: "SLIIT",
+    department: "Computer Science & Software Engineering",
+    image: Member4,
     linkedin: "#",
-    email: "lisa.chang@student.mit.edu",
-    bio: "Creative designer with expertise in user experience and interface design.",
+    email: "hasithapeiris.me@gmail.com",
   },
 ];
 
@@ -153,29 +146,29 @@ export default function MeetOurTeam() {
                 className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
               >
                 {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <div className="relative p-8">
                   {/* Profile Image */}
                   <div className="relative mb-6">
-                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-white shadow-lg group-hover:ring-blue-200 transition-all duration-300">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-white shadow-lg group-hover:ring-green-200 transition-all duration-300">
                       <img
                         src={member.image || "/placeholder.svg"}
                         alt={member.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                       {member.position.split(" ")[0]}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                       {member.name}
                     </h3>
-                    <p className="text-blue-600 font-semibold mb-1">
+                    <p className="text-green-600 font-semibold mb-1">
                       {member.position}
                     </p>
 
@@ -187,9 +180,6 @@ export default function MeetOurTeam() {
                     <p className="text-sm text-gray-500 mb-4">
                       {member.department}
                     </p>
-                    <p className="text-sm text-gray-600 mb-6 leading-relaxed">
-                      {member.bio}
-                    </p>
 
                     {/* Social Links */}
                     <div className="flex justify-center gap-4">
@@ -197,7 +187,7 @@ export default function MeetOurTeam() {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110"
+                        className="p-2 bg-green-100 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition-all duration-300 hover:scale-110"
                       >
                         <Linkedin className="w-5 h-5" />
                       </a>
@@ -236,12 +226,12 @@ export default function MeetOurTeam() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200"
+                className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-green-200"
               >
                 <div className="p-6">
                   {/* Profile Image */}
                   <div className="relative mb-4">
-                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden ring-2 ring-gray-200 group-hover:ring-blue-300 transition-all duration-300">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden ring-2 ring-gray-200 group-hover:ring-green-300 transition-all duration-300">
                       <img
                         src={member.image || "/placeholder.svg"}
                         alt={member.name}
@@ -252,10 +242,10 @@ export default function MeetOurTeam() {
 
                   {/* Content */}
                   <div className="text-center">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-green-600 transition-colors">
                       {member.name}
                     </h3>
-                    <p className="text-blue-600 font-medium text-sm mb-2">
+                    <p className="text-green-600 font-medium text-sm mb-2">
                       {member.position}
                     </p>
 
@@ -267,9 +257,6 @@ export default function MeetOurTeam() {
                     <p className="text-xs text-gray-500 mb-3">
                       {member.department}
                     </p>
-                    <p className="text-xs text-gray-600 mb-4 leading-relaxed line-clamp-2">
-                      {member.bio}
-                    </p>
 
                     {/* Social Links */}
                     <div className="flex justify-center gap-3">
@@ -277,7 +264,7 @@ export default function MeetOurTeam() {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-1.5 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300"
+                        className="p-1.5 bg-green-100 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition-all duration-300"
                       >
                         <Linkedin className="w-4 h-4" />
                       </a>

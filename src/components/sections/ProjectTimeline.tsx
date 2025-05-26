@@ -15,7 +15,7 @@ const milestones = [
     date: "March 2021",
     title: "Project Proposal",
     description:
-      "A Project Proposal is presented to potential sponsors or clients to receive funding or get your project approved.",
+      "A Project Proposal is presented to potential sponsors or clients to receive funding or get out project approved.",
     marks: 6,
     percent: 6,
     icon: <FaCalendarAlt className="text-emerald-500 w-6 h-6" />,
@@ -33,7 +33,7 @@ const milestones = [
     date: "July 2021",
     title: "Research Paper",
     description:
-      "Describes your contribution to existing knowledge, with proper citation of all referenced work.",
+      "Describes our contribution to existing knowledge, with proper citation of all referenced work.",
     marks: 10,
     percent: 60,
     icon: <FaFileAlt className="text-orange-500 w-6 h-6" />,
@@ -133,7 +133,7 @@ const ProjectTimeline = () => {
                         <div className="w-0.5 h-16 bg-gradient-to-b from-emerald-400 to-green-600 mt-2"></div>
                       )}
                     </div>
-                    <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex-1 relative">
+                    <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 relative flex-1">
                       {/* Low-opacity number background */}
                       <div className="absolute right-4 top-2 text-6xl font-bold text-gray-200 opacity-10 z-0">
                         {index + 1}
@@ -174,7 +174,7 @@ const ProjectTimeline = () => {
                     {/* Left Side Content */}
                     <div className="w-5/12 pr-1">
                       {isLeft ? (
-                        <div className="bg-gray-100 p-6 rounded-xl shadow-lg relative">
+                        <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 relative">
                           {/* Low-opacity number background */}
                           <div className="absolute right-4 top-2 text-6xl font-bold text-gray-200 opacity-10 z-0">
                             {index + 1}
@@ -227,7 +227,7 @@ const ProjectTimeline = () => {
                     {/* Right Side Content */}
                     <div className="w-5/12 pl-1">
                       {!isLeft ? (
-                        <div className="bg-gray-100 p-6 rounded-xl shadow-lg relative">
+                        <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 relative">
                           {/* Low-opacity number background */}
                           <div className="absolute right-4 top-2 text-6xl font-bold text-gray-200 opacity-10 z-0">
                             {index + 1}

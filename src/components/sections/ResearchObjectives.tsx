@@ -11,12 +11,12 @@ const objectives = [
   {
     icon: <BrainCircuit className="w-6 h-6 text-green-600" />,
     title: "Develop ML Models",
-    desc: "Design and train machine learning models for yield prediction, disease detection, and climate response.",
+    desc: "Design and train machine learning models for price prediction, disease detection, demand prediction and Forex prediction.",
   },
   {
     icon: <BarChart3 className="w-6 h-6 text-green-600" />,
-    title: "Create Export Forecasting Engine",
-    desc: "Build a forecasting module for foreign exchange predictions using historical and market data.",
+    title: "Integrate and Test the Developed Models",
+    desc: "Build a single forecasting framework to build and test machine learning models.",
   },
   {
     icon: <Globe2 className="w-6 h-6 text-green-600" />,

@@ -27,9 +27,9 @@ const cardData = [
   {
     number: 4,
     icon: <LineChart className="w-8 h-8 text-green-500" />,
-    title: "Sustainability Optimization",
+    title: "Absence of decision-support tools",
     description:
-      "Few solutions address eco-friendly practices through intelligent decision-making systems for resource conservation.",
+      "There are limited solutions for creating interactive tools that are easy to use for policymakers and agricultural planners.",
   },
 ];
 
