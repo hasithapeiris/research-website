@@ -151,7 +151,7 @@ export default function Navbar() {
                   isScrolled ? "text-gray-800" : "text-white"
                 }`}
               >
-                TheGuard
+                ThéGuard
               </h1>
             </div>
           </motion.div>

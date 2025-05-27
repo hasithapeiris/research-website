@@ -26,6 +26,7 @@ import Member3 from "./members/bhagya.png";
 import Member4 from "./members/hasitha.jpg";
 import Supervisor from "./members/supervisor.jpg";
 import Co_Supervisor from "./members/co_supervisor.jpg";
+import External_Superviosr from "./members/external.png";
 
 export { Header_1, Header_2, Header_3, System_Diagram };
 
@@ -46,6 +47,7 @@ export {
   Jupyter,
   Supervisor,
   Co_Supervisor,
+  External_Superviosr,
 };
 
 export { Member1, Member2, Member3, Member4 };

@@ -13,24 +13,24 @@ const documents = [
   {
     name: "Project Proposal",
     date: "2024-01-15",
-    type: ["PDF", "DOCX"],
-    link: { PDF: "#", DOCX: "#" },
+    type: "PDF",
+    link: "https://drive.google.com/drive/folders/1HV47YVGo3BoxfUPhGKB4WWEZXH0tyyk-?usp=sharing",
     size: "2.4 MB",
     description: "Initial project proposal and scope definition",
   },
   {
     name: "Status Document I",
-    date: "2024-02-10",
+    date: null,
     type: "PDF",
-    link: "#",
+    link: null,
     size: "5.1 MB",
     description: "Comprehensive status review of the project",
   },
   {
     name: "Status Document II",
-    date: "2025-02-10",
+    date: null,
     type: "PDF",
-    link: "#",
+    link: null,
     size: "5.1 MB",
     description: "Comprehensive status review of the project",
   },
@@ -38,16 +38,16 @@ const documents = [
     name: "Research Paper",
     date: "2025-03-20",
     type: "PDF",
-    link: "#",
+    link: "https://drive.google.com/file/d/13sIy6xrGXsPv1gEQV3SUj9my_cqho2Ec/view?usp=sharing",
     size: "3.2 MB",
     description:
       "Describes our contribution to existing knowledge, with proper citation of all referenced work",
   },
   {
     name: "Final Report",
-    date: null,
+    date: "2025-04-11",
     type: "PDF",
-    link: null,
+    link: "https://drive.google.com/file/d/1X-mB4SikBaheiSiC9_nDOi8daWmTEun6/view?usp=sharing",
     size: "TBD",
     description: "Complete project documentation and findings",
   },
@@ -66,7 +66,7 @@ const presentations = [
     name: "Project Proposal",
     date: "2024-05-20",
     type: "PPTX",
-    link: "#",
+    link: "https://docs.google.com/presentation/d/1xl-Dd1NACL5OSADeOy3tObzNTY3_RpXS/edit?usp=sharing&ouid=105612074842566549596&rtpof=true&sd=true",
     size: "8.5 MB",
     description: "Initial project presentation and team introduction",
   },
@@ -74,7 +74,7 @@ const presentations = [
     name: "Progress Presentation I",
     date: "2024-11-15",
     type: "PPTX",
-    link: "#",
+    link: "https://docs.google.com/presentation/d/1JfA_3lNqYaGvrPiopFR0TqSdUD3SO2zu/edit?usp=sharing&ouid=105612074842566549596&rtpof=true&sd=true",
     size: "12.3 MB",
     description: "Progress update and milestone achievements",
   },
@@ -82,7 +82,7 @@ const presentations = [
     name: "Progress Presentation II",
     date: "2024-11-15",
     type: "PPTX",
-    link: "#",
+    link: "https://docs.google.com/presentation/d/1ksvHcDpQoALHqCGpM0QSyj6Cutv35Gft/edit?usp=sharing&ouid=105612074842566549596&rtpof=true&sd=true",
     size: "12.3 MB",
     description: "Progress update and milestone achievements",
   },
@@ -220,10 +220,14 @@ export default function Downloads() {
                           </button>
                         ))
                       ) : doc.link ? (
-                        <button className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <a
+                          href={`${doc.link}`}
+                          target="_blank"
+                          className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                        >
                           <Download className="w-4 h-4" />
                           {doc.type}
-                        </button>
+                        </a>
                       ) : (
                         <button
                           disabled
@@ -312,14 +316,21 @@ export default function Downloads() {
                     <div className="flex gap-2">
                       {ppt.link ? (
                         <div className="flex gap-2">
-                          <button className="flex items-center gap-1 px-3 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm font-medium">
+                          <a
+                            href={`${ppt.link}`}
+                            target="_blank"
+                            className="flex items-center gap-1 px-3 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm font-medium"
+                          >
                             <Download className="w-4 h-4" />
                             Download
-                          </button>
-                          <button className="flex items-center gap-1 px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium">
+                          </a>
+                          <a
+                            href={`${ppt.link}`}
+                            className="flex items-center gap-1 px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium"
+                          >
                             <ExternalLink className="w-4 h-4" />
                             View
-                          </button>
+                          </a>
                         </div>
                       ) : (
                         <button

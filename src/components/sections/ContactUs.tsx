@@ -75,8 +75,11 @@ export default function ContactUs() {
         <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-6 text-gray-600">
           <div className="flex items-center gap-2">
             <Mail className="text-blue-500" />
-            <a href="mailto:research@teaportal.org" className="hover:underline">
-              research@teaportal.org
+            <a
+              href="mailto:theguard.research@gmail.com"
+              className="hover:underline"
+            >
+              theguard.research@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-2">
