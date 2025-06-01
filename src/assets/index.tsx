@@ -23,7 +23,7 @@ import Jupyter from "./tech/Jupyter.png";
 import Member1 from "./members/methya.png";
 import Member2 from "./members/shashi.png";
 import Member3 from "./members/bhagya.png";
-import Member4 from "./members/hasitha.jpg";
+import Member4 from "./members/hasitha.png";
 import Supervisor from "./members/supervisor.jpg";
 import Co_Supervisor from "./members/co_supervisor.jpg";
 import External_Superviosr from "./members/external.png";
